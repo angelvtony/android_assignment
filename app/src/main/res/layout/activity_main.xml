@@ -15,15 +15,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="522dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="511dp"
         android:drawableLeft="@drawable/ic_baseline_account"
         android:paddingRight="10dp"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="#0000ff"
-        android:textSize="70px" />
+        android:textSize="70px"
+        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/userName"
@@ -32,10 +34,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="65dp"
         android:layout_marginLeft="340px"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="415dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="402dp"
         android:background="@drawable/edittext"
         android:drawableLeft="@drawable/ic_baseline_person"
         android:hint="User Name"
@@ -43,37 +45,80 @@
         android:textAlignment="center"
         android:textColor="@color/black" />
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="283dp"
         android:layout_height="45dp"
-        android:layout_alignTop="@+id/userName"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="334dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="312dp"
         android:background="@drawable/edittext"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:hint="Password"
         android:paddingLeft="10dp"
         android:textAlignment="center" />
 
+
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignTop="@+id/password"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="226dp"
+        android:background="@drawable/button"
         android:text="Login"
         android:textColor="@color/white"
         app:backgroundTint="#0000ff" />
+
+
+    <TextView
+        android:id="@+id/forgot"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="214dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="181dp"
+        android:text="forgot password?"
+        android:textColor="#0000ff" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="114dp"
+        android:text="Don't have an account?"
+        android:textColor="#45454A" />
+
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="113dp"
+        android:text="Sign Up"
+        android:textColor="#0000ff" />
+
+
 </RelativeLayout>
