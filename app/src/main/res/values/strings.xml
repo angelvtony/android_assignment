@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">loginScreen</string>
+    <string name="logo">Login</string>
+    <string name="user_hint">User Name</string>
+    <string name="password_hint">Password</string>
+    <string name="button">Login</string>
+    <string name="forgot">forgot password?</string>
+    <string name="text">Don\'t have an account?</string>
+    <string name="signup">Sign Up</string>
 </resources>
