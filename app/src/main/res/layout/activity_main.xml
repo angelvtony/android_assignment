@@ -15,9 +15,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="350dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="368dp"
         android:background="@drawable/edittext"
         android:drawableStart="@drawable/ic_baseline_person"
         android:hint="@string/user_hint"
@@ -31,9 +32,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="63dp"
         android:layout_marginEnd="65dp"
-        android:layout_marginBottom="274dp"
+        android:layout_marginBottom="295dp"
         android:background="@drawable/edittext"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:hint="@string/password_hint"
@@ -47,9 +49,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="187dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="212dp"
         android:background="@drawable/button"
         android:text="@string/button"
         android:textColor="@color/white"
@@ -62,9 +65,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="202dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="143dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="168dp"
         android:text="@string/forgot"
         android:textColor="#0000ff" />
 
@@ -75,9 +78,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="82dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="134dp"
         android:text="@string/text"
         android:textColor="#45454A" />
 
@@ -88,9 +92,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="135dp"
         android:text="@string/signup"
         android:textColor="#0000ff" />
 
@@ -102,10 +106,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="39dp"
-        android:layout_marginBottom="424dp"
+        android:layout_marginBottom="442dp"
         app:srcCompat="@drawable/login" />
 
     <ImageView
@@ -121,5 +126,35 @@
         app:srcCompat="@drawable/ic_baseline_tag_faces_24"
         tools:ignore="VectorDrawableCompat" />
 
+    <ImageView
+        android:id="@+id/google"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="164dp"
+        android:layout_marginBottom="69dp"
+        app:srcCompat="@drawable/google" />
+
+    <ImageView
+        android:id="@+id/linked"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginBottom="69dp"
+        app:srcCompat="@drawable/linked" />
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="71dp"
+        app:srcCompat="@drawable/face" />
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.acabes.loginscreen">
 
     <application
@@ -9,17 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginScreen">
-        <activity android:name=".Home"></activity>
-        <activity android:name=".home"></activity>
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".SplashScreen"
             android:exported="true">
+            android:exported="true"
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+            </activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".Home" />
+        <activity android:name=".home" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     val user = "Admin"
@@ -21,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loginFailedImage = findViewById<ImageView>(R.id.loginFailedImage)
+        val signUpTextView = findViewById<TextView>(R.id.sign)
         login.setOnClickListener{
             val enteredUser = userName.text.toString()
             val enteredPass = password.text.toString()
@@ -33,6 +31,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
                 loginFailedImage.visibility = View.VISIBLE
             }
+        }
+        signUpTextView.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
         }
     }
 }
