@@ -3,8 +3,10 @@ package com.acabes.loginscreen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val userName = findViewById<EditText>(R.id.userName)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
+        val loginFailedImage = findViewById<ImageView>(R.id.loginFailedImage)
         login.setOnClickListener{
             val enteredUser = userName.text.toString()
             val enteredPass = password.text.toString()
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+                loginFailedImage.visibility = View.VISIBLE
             }
         }
     }
