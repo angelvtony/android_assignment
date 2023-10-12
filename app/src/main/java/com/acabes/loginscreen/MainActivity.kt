@@ -7,13 +7,12 @@ import android.view.View
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    val user = "Admin"
+    val username = "Angel"
     val pass = "Admin"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val userName = findViewById<EditText>(R.id.userName)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
@@ -22,10 +21,13 @@ class MainActivity : AppCompatActivity() {
         login.setOnClickListener{
             val enteredUser = userName.text.toString()
             val enteredPass = password.text.toString()
-            if (enteredUser == user && enteredPass == pass){
-
+            if (enteredUser == username && enteredPass == pass){
                 val intent = Intent(this, Home::class.java)
                 startActivity(intent)
+                run {
+                    intent.putExtra("username", enteredUser)
+                    startActivity(intent)
+                }
             }
             else{
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
