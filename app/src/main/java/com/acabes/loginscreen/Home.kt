@@ -65,7 +65,7 @@ class Home : AppCompatActivity() {
                             }
                         }
 
-                        val username = intent.getStringExtra("username")
+                        val username = intent.getStringExtra("enteredUser")
                         greetingMessageTextView.text = "Hi, $username"
                     }
                 }
