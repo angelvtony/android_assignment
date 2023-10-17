@@ -7,4 +7,6 @@
     <string name="forgot">forgot password?</string>
     <string name="text">Don\'t have an account?</string>
     <string name="signup">Sign Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Angel</string>
 </resources>
