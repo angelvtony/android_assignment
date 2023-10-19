@@ -6,9 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import com.acabes.loginscreen.quotapi.QuotesApi
 import com.acabes.loginscreen.quotapi.RetrofitHelper
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -17,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class Home : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
+    @SuppressLint("MissingInflatedId")
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +24,8 @@ class Home : AppCompatActivity() {
         val quotesApi = RetrofitHelper.getInstance().create(QuotesApi::class.java)
         val textView = findViewById<TextView>(R.id.textView)
         val refreshButton = findViewById<Button>(R.id.refreshButton)
+
         refreshButton.setOnClickListener {
-
-
-
             GlobalScope.launch {
                 val result = quotesApi.getQuotes()
                 if (result.isSuccessful) {
@@ -71,6 +68,8 @@ class Home : AppCompatActivity() {
             }
 
 
-        }
+
+
+}
 
 
