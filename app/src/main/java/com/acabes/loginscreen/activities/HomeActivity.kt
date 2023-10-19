@@ -1,4 +1,4 @@
-package com.acabes.loginscreen
+package com.acabes.loginscreen.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,13 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import com.acabes.loginscreen.quotapi.QuotesApi
-import com.acabes.loginscreen.quotapi.RetrofitHelper
+import com.acabes.loginscreen.R
+import com.acabes.loginscreen.fragments.MasterCardFragment
+import com.acabes.loginscreen.fragments.VisaCardFragment
+import com.acabes.loginscreen.network.QuotesApi
+import com.acabes.loginscreen.network.RetrofitHelperQuotes
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class Home : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     @SuppressLint("MissingInflatedId")
     @OptIn(DelicateCoroutinesApi::class)
@@ -21,7 +24,7 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val quotesApi = RetrofitHelper.getInstance().create(QuotesApi::class.java)
+        val quotesApi = RetrofitHelperQuotes.getInstance().create(QuotesApi::class.java)
         val textView = findViewById<TextView>(R.id.textView)
         val refreshButton = findViewById<Button>(R.id.refreshButton)
 
@@ -40,17 +43,17 @@ class Home : AppCompatActivity() {
                         val greetingMessageTextView = findViewById<TextView>(R.id.greetingMessage)
                         val master = findViewById<Button>(R.id.master)
                         val visa = findViewById<Button>(R.id.visa)
-                        val visaCard = VisaCard()
-                        val fragmentCard = CardFragment()
+                        val visaCardFragment = VisaCardFragment()
+                        val fragmentCard = MasterCardFragment()
                         supportFragmentManager.beginTransaction().apply {
-                            replace(R.id.frameFragment, visaCard)
+                            replace(R.id.frameFragment, visaCardFragment)
                             commit()
                         }
 
 
                         master.setOnClickListener {
                             supportFragmentManager.beginTransaction().apply {
-                                replace(R.id.frameFragment, visaCard)
+                                replace(R.id.frameFragment, visaCardFragment)
                                 commit()
                             }
                         }

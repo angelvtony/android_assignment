@@ -1,4 +1,4 @@
-package com.acabes.loginscreen.apicred
+package com.acabes.loginscreen.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,4 +1,4 @@
-package com.acabes.loginscreen
+package com.acabes.loginscreen.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.acabes.loginscreen.R
 
-class SignUp : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     private val userList = ArrayList<User>()
     data class User(val id: String, val name: String, val email: String, val password: String)
 

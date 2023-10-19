@@ -1,13 +1,14 @@
-package com.acabes.loginscreen
+package com.acabes.loginscreen.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.acabes.loginscreen.R
 
 
-class CardFragment : Fragment(R.layout.fragment_card) {
+class MasterCardFragment : Fragment(R.layout.fragment_card_master) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -17,7 +18,7 @@ class CardFragment : Fragment(R.layout.fragment_card) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_card, container, false)
+        return inflater.inflate(R.layout.fragment_card_master, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,7 +27,7 @@ class CardFragment : Fragment(R.layout.fragment_card) {
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CardFragment().apply {
+            MasterCardFragment().apply {
                 arguments = Bundle().apply {
                 }
             }

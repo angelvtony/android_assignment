@@ -1,13 +1,14 @@
-package com.acabes.loginscreen
+package com.acabes.loginscreen.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.acabes.loginscreen.R
 
 
-class VisaCard : Fragment(R.layout.fragment_visa_card) {
+class VisaCardFragment : Fragment(R.layout.fragment_visa_card) {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class VisaCard : Fragment(R.layout.fragment_visa_card) {
 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            VisaCard().apply {
+            VisaCardFragment().apply {
                 arguments = Bundle().apply {
                 }
             }

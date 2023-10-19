@@ -1,9 +1,9 @@
-package com.acabes.loginscreen.quotapi
+package com.acabes.loginscreen.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitHelper {
+object RetrofitHelperQuotes {
 
     val baseUrl = "https://ron-swanson-quotes.herokuapp.com/"
 

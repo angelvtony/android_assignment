@@ -1,4 +1,4 @@
-package com.acabes.loginscreen.quotapi
+package com.acabes.loginscreen.network
 
 import java.util.List;
 
