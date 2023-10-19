@@ -40,18 +40,6 @@ class Home : AppCompatActivity() {
                     }
                 }
 
-
-                GlobalScope.launch {
-                    val result = quotesApi.getQuotes()
-                    if (result.isSuccessful) {
-                        val quotes = result.body()
-                        if (!quotes.isNullOrEmpty()) {
-                            runOnUiThread {
-                                textView.text = quotes[0]
-                            }
-                        }
-
-
                         val greetingMessageTextView = findViewById<TextView>(R.id.greetingMessage)
                         val master = findViewById<Button>(R.id.master)
                         val visa = findViewById<Button>(R.id.visa)
@@ -84,5 +72,5 @@ class Home : AppCompatActivity() {
 
 
         }
-    }
-}
+
+

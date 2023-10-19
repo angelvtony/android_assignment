@@ -9,7 +9,5 @@ object RetrofitHelper {
                 return Retrofit.Builder().baseUrl(BASEURL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
-
-
             }
 }
