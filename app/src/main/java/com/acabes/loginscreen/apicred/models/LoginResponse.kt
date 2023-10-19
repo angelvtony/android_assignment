@@ -1,4 +1,4 @@
-package com.acabes.loginscreen.apicred
+package com.acabes.loginscreen.apicred.models
 
 
 data class LoginResponse(val email: String,
