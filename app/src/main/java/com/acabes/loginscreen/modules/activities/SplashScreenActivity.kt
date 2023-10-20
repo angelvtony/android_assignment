@@ -1,4 +1,4 @@
-package com.acabes.loginscreen.activities
+package com.acabes.loginscreen.modules.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

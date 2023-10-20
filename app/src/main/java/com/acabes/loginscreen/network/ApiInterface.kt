@@ -10,7 +10,8 @@ import retrofit2.http.POST
 
 interface ApiInterface {
     @POST("/auth/login")
-    suspend fun postData(@Body userData: CreditialData):Response<LoginResponse>
+    suspend fun postData(@Body userData: CreditialData):LoginResponse
+
 
 
 }

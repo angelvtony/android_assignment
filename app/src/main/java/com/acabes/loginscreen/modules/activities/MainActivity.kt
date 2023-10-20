@@ -1,19 +1,17 @@
-package com.acabes.loginscreen.activities
+package com.acabes.loginscreen.modules.activities
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
+import androidx.lifecycle.ViewModelProvider
+import com.acabes.loginscreen.viewmodel.LoginViewModel
 import com.acabes.loginscreen.R
 import com.acabes.loginscreen.network.ApiInterface
-import com.acabes.loginscreen.models.CreditialData
 import com.acabes.loginscreen.network.RetrofitHelper
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -24,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(key, value)
         startActivity(intent)
     }
+
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,34 +32,38 @@ class MainActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val signUpTextView = findViewById<TextView>(R.id.sign)
+        var viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        if (sharedPreferences.getBoolean("isLoggedIn",false)){
-            startNewActivity(HomeActivity::class.java,"enteredUser","")
+
+        if (sharedPreferences.getBoolean("isLoggedIn", false)) {
+            startNewActivity(HomeActivity::class.java, "enteredUser", "")
         }
         login.setOnClickListener {
             val enteredUser = userName.text.toString()
             val enteredPass = password.text.toString()
             val userApi = RetrofitHelper.getInstance().create(ApiInterface::class.java)
-            GlobalScope.launch {
-                val data = CreditialData(enteredUser, enteredPass )
-                val result = userApi.postData(data)
-                if (result.isSuccessful) {
-                    Log.d("Angel ", result.body().toString())
+            viewModel.fetchLogin(enteredUser, enteredPass)
+            viewModel.login.observe(this) {
+
+            }
+            val user = viewModel.login.value
+            if (user != null) {
+                runOnUiThread {
+                    startNewActivity(HomeActivity::class.java, "enteredUser", enteredUser)
                     val editor = sharedPreferences.edit()
                     editor.putString("username", enteredUser)
-                    editor.putString("password",enteredPass)
-                    editor.putString("firstName",result.body()?.firstName)
+                    editor.putString("password", enteredPass)
+                    editor.putString("firstName", user.firstName)
                     editor.putBoolean("isLoggedIn", true)
                     editor.apply()
-                    runOnUiThread {
-                        startNewActivity(HomeActivity::class.java, "enteredUser", enteredUser)
-                    }
 
                 }
+            } else {
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
         }
         signUpTextView.setOnClickListener {
-            startNewActivity(SignUpActivity::class.java, "enteredUser", "message",)
+            startNewActivity(SignUpActivity::class.java, "enteredUser", "message")
         }
     }
 
