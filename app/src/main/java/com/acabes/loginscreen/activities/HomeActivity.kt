@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val quotesApi = RetrofitHelperQuotes.getInstance().create(QuotesApi::class.java)
-        val textView = findViewById<TextView>(R.id.textView)
+        val textView = findViewById<TextView>(R.id.quoteSection)
         val refreshButton = findViewById<Button>(R.id.refreshButton)
 
         refreshButton.setOnClickListener {
